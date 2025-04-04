@@ -1,4 +1,5 @@
-import { Alert } from '@mantine/core';
+import { Alert } from "@chakra-ui/react";
+
 
 interface ErrorMessageProps {
   message: string;

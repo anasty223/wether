@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🚀 Project Setup
 
-Currently, two official plugins are available:
+Install dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+``` 
+npm install
+```
+Create a .env file
 
-## Expanding the ESLint configuration
+Create a .env file in the root directory and add your OpenWeather API key:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+``` 
+VITE_API_KEY=your_actual_api_key
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then restart the server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+npm run dev
+```
+
+Start the development server
+
+```
+npm run dev
+```
+
+Build the project
+
+```
+npm run build
+```
+
+Run linting
+
+```
+npm run lint
+```
+
+Run tests
+
+```
+npm run test
+```
+
+### 📜 File Descriptions
+
+WeatherApp.tsx — Main application component.
+
+WeatherForm.tsx — Form for entering a city name.
+
+ErrorMessage.tsx — Component for displaying errors.
+
+fetchWeather.ts — Function to fetch weather data from OpenWeather API.
+
+### ⚙️ Technologies
+
+React 19
+
+TypeScript
+
+Vite
+
+Chakra UI
+
+Axios
+
+Jest (for testing)
+
+### 🛠 Possible Errors
+
+API key not set → Check the .env file.
+
+Error 404 "City not found" → Enter a valid city name.
+
+CORS or network errors → Check DevTools (F12 → Network).
+
+### 📝 This project was created for educational purposes.
+
