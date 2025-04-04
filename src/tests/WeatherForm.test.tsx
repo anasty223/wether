@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { render } from '../tests/testUtils'; // Custom render
 import { WeatherForm } from '../components/WeatherForm';
 
 test('submits city name correctly', () => {
