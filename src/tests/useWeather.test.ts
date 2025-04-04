@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 import { useWeather } from '../hooks/useWeather';
 import * as api from '../utils/api';
 import * as cache from '../utils/cache';
+import 'jest';
 
 jest.mock('../utils/api');
 jest.mock('../utils/cache');

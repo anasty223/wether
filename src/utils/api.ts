@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const API_KEY = 'your-api-key-here'; // Replace with your OpenWeatherMap API key
+const API_KEY = import.meta.env.VITE_API_KEY; // Replace with your OpenWeatherMap API key
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 export interface WeatherData {
   name: string;
   main: { temp: number };
   weather: { description: string; icon: string }[];
-  dt: number; // Unix timestamp
+  dt: number; 
 }
 
 export const fetchWeather = async (city: string): Promise<WeatherData> => {
@@ -16,11 +16,15 @@ export const fetchWeather = async (city: string): Promise<WeatherData> => {
       params: {
         q: city,
         appid: API_KEY,
-        units: 'metric', // Celsius
+        units: 'metric', 
       },
     });
     return response.data;
-  } catch (error) {
-    throw new Error('Failed to fetch weather data');
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    } else {
+      throw new Error('An unknown error occurred');
+    }
   }
 };

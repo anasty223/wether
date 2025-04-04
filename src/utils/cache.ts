@@ -1,3 +1,5 @@
+import { WeatherData } from "./api";
+
 interface CacheEntry {
     data: WeatherData;
     timestamp: number;
